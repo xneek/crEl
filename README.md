@@ -33,11 +33,32 @@ crEl(tagName[,attr, child-1,... child-n]) // return DOM element
 */
 ```  
 
-| parameters  | Type |
-| tagMame | String |
-| attr  | Object  |
-| child  | String or DOM element  |
-
+<table border="1" width="100%">
+    <tr>
+      <td><strong>Parameters</strong></td>
+      <td><strong>Type</strong></td>
+      <td><strong>Description</strong></td>
+      <td><strong>Example</strong></td>
+    </tr>
+    <tr>
+      <td>tagMame</td>
+      <td>String</td>
+      <td>name of HTML tag</td>
+      <td>div, em, a, table, ...</td>
+    </tr>
+    <tr>
+      <td>attr</td>
+      <td>Object</td>
+      <td>attributeName:value </td>
+      <td>{name:'psw', type:'password'}</td>
+    </tr>
+    <tr>
+      <td>child</td>
+      <td>String or DOM element</td>
+      <td>String or DOM element</td>
+      <td>&quot;Hello&quot; or crEl(&quot;strong&quot;,{},&quot;hello&quot;)</td>
+    </tr>
+</table>
 
 
 ##Examples
