@@ -26,7 +26,7 @@ var a = crEl('a',{href:'#', c:'btn'}, "Click me")
 crEl(tagName[,attr, child-1,... child-n]) // return DOM element
 ```  
 
-<table border="1" width="100%">
+<table>
     <tr>
       <td><strong>Parameters</strong></td>
       <td><strong>Type</strong></td>
@@ -34,7 +34,7 @@ crEl(tagName[,attr, child-1,... child-n]) // return DOM element
       <td><strong>Example</strong></td>
     </tr>
     <tr>
-      <td>tagMame</td>
+      <td>tagName</td>
       <td>String</td>
       <td>name of HTML tag</td>
       <td>div, em, a, table, ...</td>
