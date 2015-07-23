@@ -1,7 +1,8 @@
 # crEl
 Работа с DOM создание элемента. Нативный Javascript.
 
-#In the past 
+<a href="#">Click me</a>
+##In the past 
 ```
 var a = document.createElement('a');
     a.setAttribute('href','#');
@@ -9,9 +10,10 @@ var a = document.createElement('a');
     a.appendChild(document.createTextNode("Click me"))
 
 ``` 
-#right now 
+##right now 
 ```
 
 var a = crEl('a',{href:'#', c:'btn'}, "Click me")
 
 ```  
+
