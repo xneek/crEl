@@ -22,15 +22,8 @@ var a = crEl('a',{href:'#', c:'btn'}, "Click me")
 ```  
 
 ##Docs
-```
-
+```javascript
 crEl(tagName[,attr, child-1,... child-n]) // return DOM element
-/*
-    PARAMS
-    | tagMame| String | name of HTML tag        | (e.g. div, em, a, table et al.)        |
-    | attr   | Object | attribute:value         | (e.g. {name:'psw', type:'password'})   |
-    | child  | Object | String or DOM element   | plenty                                 |
-*/
 ```  
 
 <table border="1" width="100%">
