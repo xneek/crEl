@@ -5,13 +5,13 @@
 ```
 var a = document.createElement('a');
     a.setAttribute('href','#');
-    a.onlick = function(){alert("Ololo");}
+    a.setAttribute('class','btn');
     a.appendChild(document.createTextNode("Click me"))
 
 ``` 
 #right now 
 ```
 
-crEl('a',{href:'#', events:{click:function(){alert('Ololo')}} }, "Click me")
+var a = crEl('a',{href:'#', c:'btn'}, "Click me")
 
 ```  
