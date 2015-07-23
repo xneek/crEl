@@ -53,6 +53,7 @@ crEl(tagName[,attr, child-1,... child-n]) // return DOM element
     </tr>
 </table>
 
+> <strong>c</strong> or <strong>cl</strong> - is alias for "class" attribute (Shoutout IE browser:)) 
 
 ##Examples
 ```javascript
