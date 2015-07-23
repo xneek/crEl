@@ -32,6 +32,14 @@ crEl(tagName[,attr, child-1,... child-n]) // return DOM element
     | child  | Object | String or DOM element   | plenty                                 |
 */
 ```  
+
+| parameters  | Type | Description | Example |
+| tagMame | String | Tag Name | div, em, a, table, ... |
+| attr  | Object  | attribute:value  | {name:'psw', type:'password'} |
+| child  | String or DOM element  | String or DOM element for adding | "Ololo" or crEl('br') |
+
+
+
 ##Examples
 ```javascript
     crEl('hr'); // return <hr> DOM element
