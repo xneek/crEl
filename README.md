@@ -62,7 +62,7 @@ crEl(tagName[,attr, child-1,... child-n]) // return DOM element
 ```  
 
 
-##Simple converter HTML->crEL
+##Simple converter HTML⇨crEL
 http://fednik.ru/f/crel/
 
 
