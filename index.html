@@ -19,7 +19,7 @@ document.body.appendChild(crEl('ul',{c:'menu', id:'menu'}));
 var i = 0, menu = document.getElementById('menu');
 while(i<=500){
 	menu.appendChild(
-		crEl('li',{},
+		crEl('li',
 			crEl('a', {href:'javascript:void(0)', 'data-number':i, events:{click:function(){
 				alert("I'm "+ this.getAttribute('data-number'))
 			}}},"Link-"+i)

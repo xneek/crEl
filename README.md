@@ -23,7 +23,7 @@ var a = crEl('a',{href:'#', c:'btn'}, "Click me")
 
 ##Docs
 ```javascript
-crEl(tagName[,attr, child-1,... child-n]) // return DOM element
+crEl(tagName,[attr, child-1,... child-n]) // return DOM element
 ```  
 
 <table>
@@ -71,15 +71,15 @@ crEl(tagName[,attr, child-1,... child-n]) // return DOM element
 ```  
 ```javascript
     crEl('ul',{c:'menu', id:'menu'},
-            crEl('li',{}, crEl('a', {href:'#1'},"Link-1")),
-            crEl('li',{}, crEl('a', {href:'#2'},"Link-2")),
-            crEl('li',{}, crEl('a', {href:'#3'},"Link-3")),
+            crEl('li', crEl('a', {href:'#1'},"Link-1")),
+            crEl('li', crEl('a', {href:'#2'},"Link-2")),
+            crEl('li', crEl('a', {href:'#3'},"Link-3")),
     ); // typical menu
 ```  
 ```javascript
     var i = 0, menu = document.getElementById('menu');
     while(i<=100500){//to add 100500 items to the menu
-        menu.appendChild( crEl('li',{}, crEl('a', {href:'#'+i},"Link-"+i)) ); 
+        menu.appendChild( crEl('li', crEl('a', {href:'#'+i},"Link-"+i)) ); 
         i++;
     }
 ```  
