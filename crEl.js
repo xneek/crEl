@@ -21,7 +21,7 @@ var crEl = function(tagName){
               }
             }
           } else {
-            if(k === 'c' || k === 'cl' ){tagAttributes['class'] = arguments[i][k]; k='class'; }
+            if(k === 'c' || k === 'cl' ){arguments[i]['class'] = arguments[i][k]; k='class'; }
             e.setAttribute(k,arguments[i][k]);
           }
           
