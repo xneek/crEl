@@ -1,5 +1,8 @@
 # crEl
-Работа с DOM создание элемента. Нативный Javascript.
+
+A small constructor for generated DOM elements
+
+Cross-browser, Lightweight, No dependencies;
 
 ##How it works
 ###What you need to get
@@ -53,7 +56,10 @@ crEl(tagName,[attr, child-1,... child-n]) // return DOM element
     </tr>
 </table>
 
-> <strong>c</strong> or <strong>cl</strong> - is alias for "class" attribute (Shoutout IE browser:)) 
+> <strong>c</strong> - is alias for "class" attribute
+> <strong>s</strong> - is alias for "style" attribute
+> <strong>d</strong> - for set data-* attributes
+> <strong>e</strong> - for attach events
 
 ##Examples
 ```javascript
@@ -63,11 +69,11 @@ crEl(tagName,[attr, child-1,... child-n]) // return DOM element
     crEl('div',{c:'jumbotron'}); // return <div> DOM element with class jumbotron
 ```  
 ```javascript    
-    crEl('a',{href:'#'}, "link", crEl('sup',{style:'color:red'},"NEW")); 
+    crEl('a',{href:'#'}, "link", crEl('sup',{ d:{role:'badge'}, s:'color:red'},"NEW")); 
     // return <a href="#">link<sup style="color:red">NEW</sup></a>
 ```  
 ```javascript    
-    crEl("button",{events:{click:function(){alert('Ololo');}}},"Click Me"); // button with event click
+    crEl("button",{e:{click:function(){alert('Ololo');}}},"Click Me"); // button with event click
 ```  
 ```javascript
     crEl('ul',{c:'menu', id:'menu'},
