@@ -70,7 +70,7 @@ crEl(tagName,[attr, child-1,... child-n]) // return DOM element
 ```  
 ```javascript    
     crEl('a',{href:'#'}, "link", crEl('sup',{ d:{role:'badge'}, s:'color:red'},"NEW")); 
-    // return <a href="#">link<sup style="color:red">NEW</sup></a>
+    // return <a href="#">link<sup data-role="badge" style="color:red">NEW</sup></a>
 ```  
 ```javascript    
     crEl("button",{e:{click:function(){alert('Ololo');}}},"Click Me"); // button with event click
