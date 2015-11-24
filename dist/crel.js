@@ -12,7 +12,6 @@ var crEl = function(tagName){
       }else if(typeof(arguments[i])==='object'){
         for(k in arguments[i]){
           if(!arguments[i].hasOwnProperty(k)){continue;}
-		  console.log(k)
           if(k==='e' || k==='events'){
             for(ev in arguments[i][k]){
               if(!arguments[i][k].hasOwnProperty(ev)){continue;}
