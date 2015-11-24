@@ -35,8 +35,8 @@ var crEl = function(tagName){
               if('classList' in e){
                  var classes = arguments[i][k].split(' ');
                  for(ii=0, ll=classes.length; ii<ll; ii++){
-                   e.classList.add(classes[ii]);
-                 }
+					if(classes[ii].length){e.classList.add(classes[ii]);}
+				}
               } else {
                  e.className = arguments[i][k];
               }
