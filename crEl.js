@@ -32,7 +32,7 @@ var crEl = function(tagName){
             }
           } else  if(k === 'c' || k === 'class'){
               if('classList' in e){
-                 var classes = arguments[i][k].split(' ');
+                 var classes = arguments[i][k].replace(/^\s+|\s+$/g, '').replace(/\s+/g, ' ').split(' ');
                  for(ii=0, ll=classes.length; ii<ll; ii++){
 					if(classes[ii].length){e.classList.add(classes[ii]);}
 				}
