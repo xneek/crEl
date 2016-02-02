@@ -1,19 +1,16 @@
 {
-name: "crEl",
-description: "Creating DOM elements on native JS",
-keywords: [
-"DOM",
-"js"
-],
-main: [
-"dist/crel.js",
-"dist/crel.min.js"
-],
-ignore: [
-"bower.json",
-"README.md",
-"**/*.html"
-],
-dependencies: {},
-devDependencies: {}
+	"name": "crEl",
+	"description": "Creating DOM elements on native JS",
+	"keywords": ["DOM", "js"],
+	"main": [
+		"dist/crel.js",
+		"dist/crel.min.js"
+	],
+	"ignore": [
+		"bower.json",
+		"README.md",
+		"**/*.html"
+	],
+	"dependencies": {},
+	"devDependencies": {}
 }
