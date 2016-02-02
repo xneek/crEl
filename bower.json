@@ -7,7 +7,7 @@ keywords: [
 ],
 main: [
 "dist/crel.js",
-"dist/crel.min.js",
+"dist/crel.min.js"
 ],
 ignore: [
 "bower.json",
