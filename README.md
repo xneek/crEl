@@ -74,7 +74,8 @@ Required is only the first, it is a name tag . Attributes can be transmitted any
 ###Events
 
 Events can be attached to any of the created elements . Events are attached cross-browser , and you do not need to think about it . The called function is passed as a context element itself , so can be used to access the item <strong>this</strong>
-####Примеры
+
+
 ```javascript
 var myFunc = function(){
 	alert(this.innerHTML)
@@ -92,7 +93,7 @@ crEl('a',{href:'#', e:{click:function(){alert(this.innerHTML)}}}, "Click me")
 
 You can use the classic inline styles , and specify them as properties of the object js
 
-####Примеры
+
 ```javascript
 crEl('a',{href:'#', s:'color:red; font-weight:bold'}, "Click me")
 ```
