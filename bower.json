@@ -1,6 +1,6 @@
 {
 	"name": "crEl",
-	"description": "Creating DOM elements on native JS",
+	"description": "Creating DOM elements on native JS. Events support. Shortcuts support",
 	"keywords": ["DOM", "js"],
 	"main": [
 		"dist/crel.js",
