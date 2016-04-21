@@ -1,8 +1,7 @@
 var crEl = function(tagName){
   'use strict';
-  var i,l,k,ev,dt,ii, ll,
-    e = document.createElement(tagName),
-    IE='\v'=='v';
+  var i,l,k,x,dt,ii, ll,
+    e = document.createElement(tagName);
   if(arguments.length>1){
     for(i=1,l=arguments.length; i<l;i++){
       if(typeof(arguments[i])==='string'){
@@ -11,23 +10,21 @@ var crEl = function(tagName){
         e.appendChild(arguments[i]);
       }else if(typeof(arguments[i])==='object'){
         for(k in arguments[i]){
-          if(!arguments[i].hasOwnProperty(k)){continue;}
           if(k==='e' || k==='events'){
-            for(ev in arguments[i][k]){
-              if(!arguments[i][k].hasOwnProperty(ev)){continue;}
-              if(IE){
-                e.attachEvent( "on" + ev , arguments[i][k][ev]);
+            for(x in arguments[i][k]){
+              if('addEventListener' in e){
+				e.addEventListener( x.toString(),  arguments[i][k][x], false);
               } else {
-                e.addEventListener( ev.toString(),  arguments[i][k][ev], false);
+				/*e.attachEvent( "on" + x , arguments[i][k][x]);*/
+				e["on" + x] = arguments[i][k][x]
               }
             }
           } else if(k==='d' || k==='data'){
-            for(dt in arguments[i][k]){
-                if(!arguments[i][k].hasOwnProperty(dt)){continue;}
+            for(x in arguments[i][k]){
                 if('dataset' in e){
-                    e.dataset[dt] = arguments[i][k][dt];
+                    e.dataset[x] = arguments[i][k][x];
                 } else {
-                    e.setAttribute('data-'+ (dt.replace(/([A-Z])/g, function(string) { return '-' + string.toLowerCase();})),arguments[i][k][dt]);
+                    e.setAttribute('data-'+ (x.replace(/([A-Z])/g, function(string) { return '-' + string.toLowerCase();})),arguments[i][k][x]);
                 }
             }
           } else  if(k === 'c' || k === 'class'){
@@ -40,7 +37,16 @@ var crEl = function(tagName){
                  e.className = arguments[i][k];
               }
           } else if(k === 's' || k === 'style'){
-            e.style.cssText = arguments[i][k];
+			if(typeof arguments[i][k] === 'object'){
+				for(x in arguments[i][k]){
+					if(x in e.style){
+						e.style[x] = arguments[i][k][x];
+					}
+				}
+			} else {
+				e.style.cssText = arguments[i][k];
+			}
+            
           } else {
             e.setAttribute(k,arguments[i][k]);
           }
@@ -49,4 +55,4 @@ var crEl = function(tagName){
     }
   }
   return e;
-}
+};

@@ -2,7 +2,14 @@
 
 A small constructor for generated DOM elements
 
-Cross-browser, Lightweight, No dependencies;
+Features
+
+* Cross-browser
+* Lightweight
+* Dependencies free
+* Events
+* Data-* attributes
+* Shortcut for most usable attributes (e,c,s,d)
 
 ##How it works
 ###What you need to get
@@ -61,6 +68,40 @@ crEl(tagName,[attr, child-1,... child-n]) // return DOM element
 > <strong>d</strong> - for set data-* attributes
 > <strong>e</strong> - for attach events
 
+
+Required is only the first, it is a name tag . Attributes can be transmitted anywhere, but bestpractice would give them just behind the tag name. Nesting child elements is limited only by your needs.
+
+###Events
+
+Events can be attached to any of the created elements . Events are attached cross-browser , and you do not need to think about it . The called function is passed as a context element itself , so can be used to access the item <strong>this</strong>
+####Примеры
+```javascript
+var myFunc = function(){
+	alert(this.innerHTML)
+}
+crEl('a',{href:'#', e:{click:myFunc}}, "Click me")
+```
+or use anonimous function
+```javascript
+crEl('a',{href:'#', e:{click:function(){alert(this.innerHTML)}}}, "Click me")
+```
+
+
+###Styles
+
+
+You can use the classic inline styles , and specify them as properties of the object js
+
+####Примеры
+```javascript
+crEl('a',{href:'#', s:'color:red; font-weight:bold'}, "Click me")
+```
+or
+```javascript
+crEl('a',{href:'#', s:{color:'red', fontWeight:'bold'}}, "Click me")
+```
+
+
 ##Examples
 ```javascript
     crEl('hr'); // return <hr> DOM element
@@ -89,7 +130,11 @@ crEl(tagName,[attr, child-1,... child-n]) // return DOM element
         i++;
     }
 ```  
-
+##Install
+###Bower
+```bash
+    bower i crel
+```
 
 ##Simple converter HTML⇨crEL
 http://fednik.ru/f/crel/
