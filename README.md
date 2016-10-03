@@ -137,7 +137,7 @@ crEl('a',{href:'#', s:{color:'red', fontWeight:'bold'}}, "Click me")
     bower i crel
 ```
 
-##Simple converter HTML⇨crEL
+##Simple converter HTML⇨crEl
 http://fednik.ru/f/crel/
 
 
