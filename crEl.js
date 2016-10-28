@@ -6,6 +6,14 @@ var crEl = function(tagName){
     for(i=1,l=arguments.length; i<l;i++){
       if(typeof(arguments[i])==='string'){
         e.appendChild(document.createTextNode(arguments[i]));
+      }else if(typeof(arguments[i])==='object' && Object.prototype.toString.call(arguments[i]) === '[object Array]'){
+	 for(var j=0;j<arguments[i].length;j++){
+	 	if(typeof arguments[i][j]==='string'){
+			e.appendChild(document.createTextNode(arguments[i][j]));	
+		} else if(arguments[i][j].nodeType === 1){
+			e.appendChild(arguments[i][j]);
+		}
+	 }
       }else if(typeof(arguments[i])==='object' && arguments[i] && arguments[i].nodeType === 1){
         e.appendChild(arguments[i]);
       }else if(typeof(arguments[i])==='object'){
@@ -13,10 +21,10 @@ var crEl = function(tagName){
           if(k==='e' || k==='events'){
             for(x in arguments[i][k]){
               if('addEventListener' in e){
-				e.addEventListener( x.toString(),  arguments[i][k][x], false);
+		e.addEventListener( x.toString(),  arguments[i][k][x], false);
               } else {
-				/*e.attachEvent( "on" + x , arguments[i][k][x]);*/
-				e["on" + x] = arguments[i][k][x]
+		/*e.attachEvent( "on" + x , arguments[i][k][x]);*/
+		e["on" + x] = arguments[i][k][x]
               }
             }
           } else if(k==='d' || k==='data'){
