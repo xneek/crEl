@@ -57,8 +57,8 @@ crEl(tagName,[attr, child-1,... child-n]) // return DOM element
     </tr>
     <tr>
       <td>child</td>
-      <td>String or DOM element</td>
-      <td>String or DOM element</td>
+      <td>String or DOM element or Array</td>
+      <td>Child nodes of element</td>
       <td>&quot;Hello&quot; or crEl(&quot;strong&quot;,{},&quot;hello&quot;)</td>
     </tr>
 </table>
@@ -84,9 +84,13 @@ crEl('a',{href:'#', e:{click:myFunc}}, "Click me")
 ```
 or use anonimous function
 ```javascript
-crEl('a',{href:'#', e:{click:function(){alert(this.innerHTML)}}}, "Click me")
+crEl('a',{href:'#', e:{click:function(){alert(this.innerHTML)}}}, "Click me");
 ```
-
+or use inline syntax
+```javascript
+crEl('a',{ onclick: function(){alert(this.innerHTML);}, href:'#'}, "Click me");
+crEl('a',{ onclick: myFunc, href:'#'}, "Click me");
+```
 
 ###Styles
 
@@ -123,6 +127,7 @@ crEl('a',{href:'#', s:{color:'red', fontWeight:'bold'}}, "Click me")
             crEl('li', crEl('a', {href:'#2'},"Link-2")),
             crEl('li', crEl('a', {href:'#3'},"Link-3")),
     ); // typical menu
+
 ```  
 ```javascript
     var i = 0, menu = document.getElementById('menu');
@@ -134,7 +139,7 @@ crEl('a',{href:'#', s:{color:'red', fontWeight:'bold'}}, "Click me")
 ##Install
 ###Bower
 ```bash
-    bower i crel
+    bower i https://github.com/xneek/crEl
 ```
 
 ##Simple converter HTML⇨crEl

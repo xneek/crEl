@@ -38,12 +38,15 @@
 						c:'my-link grey-blue', // class
 						s:{backgroundColor:'#f8f8f8' }, // style
 						d:{myNumber:i, active:0}, // data-attributes
-						e:{click: myFunc} // events
+						e:{click: myFunc}, // events
+						ondblclick: function(){alert(this.dataset.myNumber)}
 					},'Item ' + i)
 				)
 			); 
 			i++;
 		}
+		
+		
 	</script>
 </body>
 </html>

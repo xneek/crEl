@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>crEl Example</title>
+</head>
+<body>
+	<div id="res"></div>
+	<script src="crEl-ES6.js"></script>
+	<script>
+		let res = document.getElementById("res");
+		res.appendChild(new crEl('section',
+			new crEl('h1',{s:'color:#006699'},'test'),
+			new crEl('div',{s:{padding:'20px', background:'#f8f8f8'}},
+				new crEl('button',{e:{click: function(){ alert(1) }}}, 'Show alert(1)'),
+				new crEl('button',{onclick: function(){ alert(2) }}, 'Show alert(2)')
+			)
+		))
+	</script>
+</body>
+</html>
