@@ -2,6 +2,8 @@
 
 A small constructor for generated DOM elements
 
+[Readme RU-ru](./readme_ru.md)
+
 Features
 
 * Cross-browser
