@@ -66,7 +66,12 @@
 					e.style.cssText = args[i][k];
 				}
 			  } else {
-				e.setAttribute(k,args[i][k]);
+				if( typeof args[i][k] === 'boolean' && args[i][k]){
+					e.setAttribute(k,'');
+				} else {
+					e.setAttribute(k,args[i][k]);
+				}
+				
 			  }
 			}
 		  }
