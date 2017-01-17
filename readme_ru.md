@@ -1,72 +1,72 @@
 # crEl
 
-Небольшой конструктор для создания DOM элементов.
+РќРµР±РѕР»СЊС€РѕР№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ DOM СЌР»РµРјРµРЅС‚РѕРІ.
 
-Особенности
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё
 
-* Кроссбраузерный (IE6+)
-* Легкий (667 байт gzip)
-* Без зависимостей
-* Работает с событиями
-* работает с Data-\* аттрибутами
-* Синтаксический сахар для часто используемых аттрибутов (e,c,s,d)
+* РљСЂРѕСЃСЃР±СЂР°СѓР·РµСЂРЅС‹Р№ (IE6+)
+* Р›РµРіРєРёР№ (667 Р±Р°Р№С‚ gzip)
+* Р‘РµР· Р·Р°РІРёСЃРёРјРѕСЃС‚РµР№
+* Р Р°Р±РѕС‚Р°РµС‚ СЃ СЃРѕР±С‹С‚РёСЏРјРё
+* СЂР°Р±РѕС‚Р°РµС‚ СЃ Data-\* Р°С‚С‚СЂРёР±СѓС‚Р°РјРё
+* РЎРёРЅС‚Р°РєСЃРёС‡РµСЃРєРёР№ СЃР°С…Р°СЂ РґР»СЏ С‡Р°СЃС‚Рѕ РёСЃРїРѕР»СЊР·СѓРµРјС‹С… Р°С‚С‚СЂРёР±СѓС‚РѕРІ (e,c,s,d)
 
-##Как это работатет
-###Что нужно получить
+##РљР°Рє СЌС‚Рѕ СЂР°Р±РѕС‚Р°С‚РµС‚
+###Р§С‚Рѕ РЅСѓР¶РЅРѕ РїРѕР»СѓС‡РёС‚СЊ
 ```html
-<a href="#" class="btn">Кликни меня</a>
+<a href="#" class="btn">РљР»РёРєРЅРё РјРµРЅСЏ</a>
 ```
-###Как это делалось раньше 
+###РљР°Рє СЌС‚Рѕ РґРµР»Р°Р»РѕСЃСЊ СЂР°РЅСЊС€Рµ 
 ```javascript
 var a = document.createElement('a');
     a.setAttribute('href','#');
     a.setAttribute('class','btn');
-    a.appendChild(document.createTextNode("Кликни меня"))
+    a.appendChild(document.createTextNode("РљР»РёРєРЅРё РјРµРЅСЏ"))
 
 ``` 
-###Как это делается теперь 
+###РљР°Рє СЌС‚Рѕ РґРµР»Р°РµС‚СЃСЏ С‚РµРїРµСЂСЊ 
 ```javascript
 
-var a = crEl('a',{href:'#', c:'btn'}, "Кликни меня")
+var a = crEl('a',{href:'#', c:'btn'}, "РљР»РёРєРЅРё РјРµРЅСЏ")
 
 ```  
 
-##Документация
+##Р”РѕРєСѓРјРµРЅС‚Р°С†РёСЏ
 ```javascript
 crEl(tagName,[attr, child-1,... child-n]) // return DOM element
-//или
+//РёР»Рё
 new crEl(tagName,[attr, child-1,... child-n]) // return DOM element
 ```  
 
 <table>
     <tr>
-      <td><strong>Параметры</strong></td>
-      <td><strong>Тип</strong></td>
-      <td><strong>Описание</strong></td>
-      <td><strong>Пример</strong></td>
+      <td><strong>РџР°СЂР°РјРµС‚СЂС‹</strong></td>
+      <td><strong>РўРёРї</strong></td>
+      <td><strong>РћРїРёСЃР°РЅРёРµ</strong></td>
+      <td><strong>РџСЂРёРјРµСЂ</strong></td>
     </tr>
     <tr>
       <td>tagName</td>
       <td>String</td>
-      <td>HTML тег</td>
+      <td>HTML С‚РµРі</td>
       <td>div, em, a, table, ...</td>
     </tr>
     <tr>
       <td>attr</td>
       <td>Object</td>
-      <td>Набор "ключ:значение"</td>
+      <td>РќР°Р±РѕСЂ "РєР»СЋС‡:Р·РЅР°С‡РµРЅРёРµ"</td>
       <td>{name:'psw', type:'password'}</td>
     </tr>
     <tr>
       <td>child</td>
       <td>String, Array, Node</td>
-      <td>Строки, DOM-элементы или массив строк/DOM-элементов</td>
+      <td>РЎС‚СЂРѕРєРё, DOM-СЌР»РµРјРµРЅС‚С‹ РёР»Рё РјР°СЃСЃРёРІ СЃС‚СЂРѕРє/DOM-СЌР»РµРјРµРЅС‚РѕРІ</td>
       <td>&quot;Hello&quot; or crEl(&quot;strong&quot;,{},&quot;hello&quot;)</td>
     </tr>
 </table>
 
-###Аттрибуты
-Передаются любым  по счету аргументом в вызов функции (кроме первого), но лучше передавать вторым.
+###РђС‚С‚СЂРёР±СѓС‚С‹
+РџРµСЂРµРґР°СЋС‚СЃСЏ Р»СЋР±С‹Рј  РїРѕ СЃС‡РµС‚Сѓ Р°СЂРіСѓРјРµРЅС‚РѕРј РІ РІС‹Р·РѕРІ С„СѓРЅРєС†РёРё (РєСЂРѕРјРµ РїРµСЂРІРѕРіРѕ), РЅРѕ Р»СѓС‡С€Рµ РїРµСЂРµРґР°РІР°С‚СЊ РІС‚РѕСЂС‹Рј.
 ```javascript
 {	
 	href:'#',
@@ -74,34 +74,34 @@ new crEl(tagName,[attr, child-1,... child-n]) // return DOM element
 	e:{click:myFunc}
 }
 ```
-> <strong>c</strong> - Сокращение для аттрибута "class" или "className" (будь он проклят:))
-> <strong>s</strong> - Сокращение для аттрибута "style"
-> <strong>d</strong> - Сокращение для аттрибутов data-*
-> <strong>e</strong> - Для привязки событий
+> <strong>c</strong> - РЎРѕРєСЂР°С‰РµРЅРёРµ РґР»СЏ Р°С‚С‚СЂРёР±СѓС‚Р° "class" РёР»Рё "className" (Р±СѓРґСЊ РѕРЅ РїСЂРѕРєР»СЏС‚:))
+> <strong>s</strong> - РЎРѕРєСЂР°С‰РµРЅРёРµ РґР»СЏ Р°С‚С‚СЂРёР±СѓС‚Р° "style"
+> <strong>d</strong> - РЎРѕРєСЂР°С‰РµРЅРёРµ РґР»СЏ Р°С‚С‚СЂРёР±СѓС‚РѕРІ data-*
+> <strong>e</strong> - Р”Р»СЏ РїСЂРёРІСЏР·РєРё СЃРѕР±С‹С‚РёР№
 
-Аттрибуты со значением типа Boolean обрабатываются следующим образом: аттрибут со значением истина устанавливается без значения, а со значем ложь игнорируется.
+РђС‚С‚СЂРёР±СѓС‚С‹ СЃРѕ Р·РЅР°С‡РµРЅРёРµРј С‚РёРїР° Boolean РѕР±СЂР°Р±Р°С‚С‹РІР°СЋС‚СЃСЏ СЃР»РµРґСѓСЋС‰РёРј РѕР±СЂР°Р·РѕРј: Р°С‚С‚СЂРёР±СѓС‚ СЃРѕ Р·РЅР°С‡РµРЅРёРµРј РёСЃС‚РёРЅР° СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚СЃСЏ Р±РµР· Р·РЅР°С‡РµРЅРёСЏ, Р° СЃРѕ Р·РЅР°С‡РµРј Р»РѕР¶СЊ РёРіРЅРѕСЂРёСЂСѓРµС‚СЃСЏ.
 ```javascript
 	crEl('select',
-    	crEl('option',{value:1},'Обычный'),
+    	crEl('option',{value:1},'РћР±С‹С‡РЅС‹Р№'),
         crEl('option',{value:2, selected:!isVipState},'Lux')
     )
 ```
 ```html
-   		<!-- При isVipState = false; -->
+   		<!-- РџСЂРё isVipState = false; -->
     	<select>
-        	<option value="1">Обычный</option>
+        	<option value="1">РћР±С‹С‡РЅС‹Р№</option>
             <option value="2" selected>Lux</option>
         </select>
 ```
 ```html
-       <!-- При isVipState = true; -->
+       <!-- РџСЂРё isVipState = true; -->
     	<select>
-        	<option value="1">Обычный</option>
+        	<option value="1">РћР±С‹С‡РЅС‹Р№</option>
             <option value="2">Lux</option>
         </select>
 ```
-####Стили inline
-В качестве аттрибута <strong>s</strong> или <strong>style</strong> может быть передана как строка с описанием стиля элемента, так и объект содержащий css свойства в синтаксисе JS. Эквивалентные примеры:
+####РЎС‚РёР»Рё inline
+Р’ РєР°С‡РµСЃС‚РІРµ Р°С‚С‚СЂРёР±СѓС‚Р° <strong>s</strong> РёР»Рё <strong>style</strong> РјРѕР¶РµС‚ Р±С‹С‚СЊ РїРµСЂРµРґР°РЅР° РєР°Рє СЃС‚СЂРѕРєР° СЃ РѕРїРёСЃР°РЅРёРµРј СЃС‚РёР»СЏ СЌР»РµРјРµРЅС‚Р°, С‚Р°Рє Рё РѕР±СЉРµРєС‚ СЃРѕРґРµСЂР¶Р°С‰РёР№ css СЃРІРѕР№СЃС‚РІР° РІ СЃРёРЅС‚Р°РєСЃРёСЃРµ JS. Р­РєРІРёРІР°Р»РµРЅС‚РЅС‹Рµ РїСЂРёРјРµСЂС‹:
 ```javascript
 	crEl('a',{href:'#', s:'color:red; font-weight:bold'}, "Click me")
 ```
@@ -109,19 +109,19 @@ new crEl(tagName,[attr, child-1,... child-n]) // return DOM element
 	crEl('a',{href:'#', s:{color:'red', fontWeight:'bold'}}, "Click me")
 ```
 
-####Data-аттрибуты
-В качестве аттрибута <strong>d</strong> или <strong>data</strong> может быть передан только объект содержащий пары ключ:значение для data-аттрибутов. Происходит автоматическое преобразование camelCase свойств к уместному для записи в аттрибуты DOM-элемента виду.
+####Data-Р°С‚С‚СЂРёР±СѓС‚С‹
+Р’ РєР°С‡РµСЃС‚РІРµ Р°С‚С‚СЂРёР±СѓС‚Р° <strong>d</strong> РёР»Рё <strong>data</strong> РјРѕР¶РµС‚ Р±С‹С‚СЊ РїРµСЂРµРґР°РЅ С‚РѕР»СЊРєРѕ РѕР±СЉРµРєС‚ СЃРѕРґРµСЂР¶Р°С‰РёР№ РїР°СЂС‹ РєР»СЋС‡:Р·РЅР°С‡РµРЅРёРµ РґР»СЏ data-Р°С‚С‚СЂРёР±СѓС‚РѕРІ. РџСЂРѕРёСЃС…РѕРґРёС‚ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ camelCase СЃРІРѕР№СЃС‚РІ Рє СѓРјРµСЃС‚РЅРѕРјСѓ РґР»СЏ Р·Р°РїРёСЃРё РІ Р°С‚С‚СЂРёР±СѓС‚С‹ DOM-СЌР»РµРјРµРЅС‚Р° РІРёРґСѓ.
 ```javascript
 var el = crEl('div',{d:{beHappy:'yes'}},'ololo');
 // <div data-be-happy="yes">ololo</div>
 	alert(el.dataset.beHappy); // yes
 ```
-чтение совойст возможно нативными средствами браузера element.dataset.myAttr
+С‡С‚РµРЅРёРµ СЃРѕРІРѕР№СЃС‚ РІРѕР·РјРѕР¶РЅРѕ РЅР°С‚РёРІРЅС‹РјРё СЃСЂРµРґСЃС‚РІР°РјРё Р±СЂР°СѓР·РµСЂР° element.dataset.myAttr
 
 
 ####Events
 
-Привязка событий кроссбраузерная, построена на синтаксисе изменения свойства обьекта (elem.onclick= function(){}). Сохраняется контекст вызова <strong>this</strong>
+РџСЂРёРІСЏР·РєР° СЃРѕР±С‹С‚РёР№ РєСЂРѕСЃСЃР±СЂР°СѓР·РµСЂРЅР°СЏ, РїРѕСЃС‚СЂРѕРµРЅР° РЅР° СЃРёРЅС‚Р°РєСЃРёСЃРµ РёР·РјРµРЅРµРЅРёСЏ СЃРІРѕР№СЃС‚РІР° РѕР±СЊРµРєС‚Р° (elem.onclick= function(){}). РЎРѕС…СЂР°РЅСЏРµС‚СЃСЏ РєРѕРЅС‚РµРєСЃС‚ РІС‹Р·РѕРІР° <strong>this</strong>
 
 
 ```javascript
@@ -129,12 +129,12 @@ var myFunc = function(){
 	alert(this.innerHTML)
 }
 crEl('a',{href:'#', e:{click:myFunc, dragstart: func1, dragend:func2}}, "Click me");
-//или
+//РёР»Рё
 crEl('a',{href:'#', event:{click:myFunc, dragstart: func1, dragend:func2}}, "Click me");
-//или
+//РёР»Рё
 crEl('a',{href:'#', onclick:myFunc, ondragstart:func1, ondragend:func2 }, "Click me");
 ```
-Аналогично с использованием анонимных функций
+РђРЅР°Р»РѕРіРёС‡РЅРѕ СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј Р°РЅРѕРЅРёРјРЅС‹С… С„СѓРЅРєС†РёР№
 ```javascript
 crEl('a',{href:'#', e:{click:function(){alert(this.innerHTML)}}}, "Click me");
 ```
@@ -174,7 +174,7 @@ crEl('a',{href:'#', e:{click:function(){alert(this.innerHTML)}}}, "Click me");
     }
 ```  
 
-Можно создавать компоненты 
+РњРѕР¶РЅРѕ СЃРѕР·РґР°РІР°С‚СЊ РєРѕРјРїРѕРЅРµРЅС‚С‹ 
 ```javascript
     function Button(name, attrs = {}){
     	var btn =  crEl('button', Object.assign({},attrs), name);
@@ -183,8 +183,8 @@ crEl('a',{href:'#', e:{click:function(){alert(this.innerHTML)}}}, "Click me");
     }
 
 	crEl('div',{c:'toolbar'},
-    	new Button('Отмена',{onclick: function(){ myModal.close() }}),
-    	new Button('Сохранить', {c:'btn-primary', onclick:saveFunc})
+    	new Button('РћС‚РјРµРЅР°',{onclick: function(){ myModal.close() }}),
+    	new Button('РЎРѕС…СЂР°РЅРёС‚СЊ', {c:'btn-primary', onclick:saveFunc})
     )
 ```  
 ```javascript
