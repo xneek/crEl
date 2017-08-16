@@ -43,7 +43,7 @@ if (typeof exports === 'object') {
                     } else {
                         e[k] = args[i][k];
                     }
-                } else if (k === 'd' || k === 'data') { 
+                } else if ((k === 'd' || k === 'data') && Object.prototype.toString.call(args[i][k]) === '[object Object]') { 
                     for (x in args[i][k]) {
                         if ('dataset' in e) {
                             e.dataset[x] = args[i][k][x];
