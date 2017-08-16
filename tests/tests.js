@@ -231,5 +231,20 @@ describe("crEl (create DOM elements helper)", () => {
         });
     })
 
+    describe("Namespaces (XML/SVG)", () => {
+        it("Simple SVG", () => {
+            assert.equal(crEl('svg', {ns:'http://www.w3.org/2000/svg'}).outerHTML, '<svg></svg>');
+        });        
+        it("SVG", () => {
+            assert.equal(crEl('svg', {ns:'http://www.w3.org/2000/svg', viewBox:"0 0 160 160", width:"160", height:"160"}).outerHTML, '<svg viewBox="0 0 160 160" width="160" height="160"></svg>');
+        });        
+        it("SVG circle", () => {
+            assert.equal(crEl('svg', {ns:'http://www.w3.org/2000/svg', viewBox:"0 0 160 160", width:"160", height:"160"},
+                crEl('circle',{ns:'http://www.w3.org/2000/svg',cx:80, cy:80, r:50})
+            ).outerHTML, '<svg viewBox="0 0 160 160" width="160" height="160"><circle cx="80" cy="80" r="50"></circle></svg>');
+        });
+    })
+
+
 
 });

@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 class crEl { // goodby IE
     constructor(args) {
-        let e = document.createElement(args[0] && typeof(args[0]) === 'string' ? args[0] : 'div');;
+        let  e = (typeof(args[1]) === 'object' && args[1] && args[1].nodeType != 1 && args[1].ns) ? document.createElementNS(args[1].ns, args[0]) : document.createElement(args[0] && typeof(args[0]) === 'string' ? args[0] : 'div');
         args.forEach((a, i) => {
             if (i > 0 && typeof a === 'string') {
                 e.appendChild(document.createTextNode(a));
@@ -12,7 +12,9 @@ class crEl { // goodby IE
                     switch (Object.prototype.toString.call(a)) {
                         case '[object Object]':
                             for (let k in a) {
-                                if (k === 'e' || k === 'events') {
+                               if (k === 'ns') {
+                                    
+                                } else if (k === 'e' || k === 'events') {
                                     for (let x in a[k]) {
                                         e['on' + x] = a[k][x];
                                     }
