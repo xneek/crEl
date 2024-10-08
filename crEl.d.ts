@@ -3,3 +3,5 @@ export type Args = string | Record<string, any> | Array<HTMLElement> | HTMLEleme
 declare const crEl: <T extends HTMLElement>(...args: Args[]) => T;
 
 export default crEl;
+
+declare module 'xneek-crel'
