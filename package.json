@@ -1,6 +1,6 @@
 {
-  "name": "crEl",
-  "version": "2.2.0",
+  "name": "xneek-crel",
+  "version": "2.3.0",
   "main": "crEl.js",
   "types": "crEl.d.ts",
   "repository": {
